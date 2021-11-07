@@ -8,10 +8,14 @@ local M = {}
 local providers = {}
 
 local function get_visual_selection()
-  local first = vim.api.nvim_buf_get_mark(0, "<")
-  local last = vim.api.nvim_buf_get_mark(0, ">")
-  local content = vim.api.nvim_buf_get_lines(0, first[1] - 1, last[1], 0)
-  return content
+  -- local first = vim.api.nvim_buf_get_mark(0, "<")
+  -- local last = vim.api.nvim_buf_get_mark(0, ">")
+  -- local content = vim.api.nvim_buf_get_lines(0, first[1] - 1, last[1], 0)
+  -- print(vim.inspect(first))
+  -- print(vim.inspect(last))
+  -- return content
+  vim.cmd('noau normal! "vy"')
+  return vim.fn.getreg('v')
 end
 
 M.config = function(opts)
@@ -39,7 +43,7 @@ M.share = function(provider_name, opts)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
-        provider.post(selection.value, table.concat(content, "\n"), opts or {})
+        provider.post(selection.value, content, opts or {})
       end)
       return true
     end,
