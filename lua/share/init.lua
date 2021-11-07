@@ -39,7 +39,7 @@ M.share = function(provider_name, opts)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
-        provider.post(selection.value, table.concat(content, "\n"), opts)
+        provider.post(selection.value, table.concat(content, "\n"), opts or {})
       end)
       return true
     end,
