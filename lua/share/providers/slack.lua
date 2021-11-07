@@ -4,7 +4,7 @@ local M = function(slack_token)
   local token = slack_token
   local function post(receiver, content, opts)
     local text = content
-    if opts.format = "markdown" then
+    if opts.format == "markdown" then
       text = "```\n" .. text .. "```"
     end
     local body = {
