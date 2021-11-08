@@ -35,9 +35,9 @@ The easiest way to use it is to setup keybindings for your individual providers 
 
 ```vim
 " share as markdown
-vnoremap <Leader>ss :!lua require("share").share("my_slack")
+vnoremap <Leader>ss :!lua require("share").share("my_slack")<CR>
 
 " share as code block 
-vnoremap <Leader>ssm :!lua require("share").share("my_slack", { format: "code" })
+vnoremap <Leader>ssm :!lua require("share").share("my_slack", { format: "code" })<CR>
 
 ```
