@@ -8,7 +8,7 @@ This is my first neovim plugin, so it does have rough edges, be warned. PR for f
 ## Setup
 
 Setup using `packer` or your favorite package manager. `share.nvim` does depend on `plenary` and `telescope` and will require nvim `0.5` or higher.
-Invoke the `.setup` and pass in your providers.
+Invoke the `.config(opts)` and pass in your providers.
 
 ```lua
 use({
