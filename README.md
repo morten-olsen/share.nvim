@@ -1,5 +1,7 @@
 # share.nvim
 
+![demo](./assets/demo.gif)
+
 ## Setup
 
 ```lua
